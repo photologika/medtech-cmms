@@ -1,0 +1,11 @@
+--- src/app/dashboard/page.tsx
++++ src/app/dashboard/page.tsx
+@@ -8,6 +8,8 @@
+ 
+ const prisma = new PrismaClient();
+ 
++export const dynamic = 'force-dynamic';
++
+ async function assignTechnician(formData: FormData) {
+   'use server';
+   

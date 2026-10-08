@@ -99,3 +99,17 @@ Learn more: https://nextjs.org/docs/messages/blocking-prerender-random
  GET /api/auth/session 200 in 15ms (next.js: 2ms, application-code: 13ms)
  GET /dashboard 200 in 129ms (next.js: 4ms, application-code: 126ms)
  GET /dashboard 200 in 68ms (next.js: 2ms, application-code: 66ms)
+✓ Compiled in 262ms
+✓ Compiled in 86ms
+✓ Compiled in 271ms
+✓ Compiled in 38ms
+✓ Compiled in 104ms
+⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+▲ Next.js 16.4.0 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+- Environments: .env
+✓ Ready in 1010ms
+Error: `partialPrefetching` requires `cacheComponents` to be enabled. Please update your next.config.ts accordingly.
+    at ignore-listed frames
+[?25h

@@ -1,0 +1,11 @@
+--- src/app/client/page.tsx
++++ src/app/client/page.tsx
+@@ -21,6 +21,8 @@
+   }
+ }
+ 
++export const dynamic = 'force-dynamic';
++
+ export default async function ClientPage() {
+   const equipments = await prisma.equipment.findMany({
+     include: { facility: true }
