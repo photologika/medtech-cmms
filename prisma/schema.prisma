@@ -11,6 +11,7 @@ model User {
   id             String          @id @default(cuid())
   name           String?
   email          String?         @unique
+  password       String?
   role           String          @default("CUSTOMER") // CUSTOMER, DISPATCHER, TECHNICIAN
   repairRequests RepairRequest[] // Requests assigned to this user (if technician)
 }

@@ -2,19 +2,100 @@
 > med-repair@0.1.0 dev
 > next dev
 
-⚠ Port 3000 is in use by an unknown process, using available port 3001 instead.
 ▲ Next.js 16.4.0 (Turbopack)
-- Local:         http://localhost:3001
-- Network:       http://192.168.0.2:3001
-✓ Ready in 664ms
-✓ Running next.config.ts took 44ms
-⨯ Another next dev server is already running.
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+- Environments: .env
+✓ Ready in 1003ms
+✓ Running next.config.ts took 79ms
+- Cache Components enabled
+- Partial Prefetching enabled
 
-- Local:        http://localhost:3000
-- PID:          85428
-- Dir:          /app
-- Log:          .next/dev/logs/next-development.log
+⨯ Error: React Context is unavailable in Server Components
+    at ignore-listed frames {
+  digest: '4016232774'
+}
+ GET /dashboard 500 in 997ms (next.js: 493ms, application-code: 504ms)
+⨯ Error: React Context is unavailable in Server Components
+    at ignore-listed frames {
+  digest: '4016232774'
+}
+Error: Route "/dashboard": Next.js encountered the unstable value `require('node:crypto').randomBytes(size)` while prerendering.
 
-Y GET /client 200 in 800ms (next.js: 134ms, application-code: 666ms)
-ill 85428 to stop it and start a new one.
-[?25h
+This value can change between renders, so it must be either prerendered or computed later.
+
+Ways to fix this:
+  - [dynamic] Render at request time by adding a dynamic data access (e.g. `await connection()`) before this call
+  - [cache] Prerender and cache the value with `"use cache"`
+  - [client] Render the value on the client with `"use client"`
+
+Learn more: https://nextjs.org/docs/messages/blocking-prerender-random
+    at async Dashboard (src/app/dashboard/page.tsx:31:19)
+    at Dashboard (<anonymous>)
+  29 |
+  30 | export default async function Dashboard() {
+> 31 |   const session = await getServerSession(authOptions as any);
+     |                   ^
+  32 |   if (!session) {
+  33 |     redirect('/login');
+  34 |   }
+[browser] Uncaught Error: React Context is unavailable in Server Components
+⨯ Error: React Context is unavailable in Server Components
+    at ignore-listed frames {
+  digest: '4016232774'
+}
+ GET /dashboard 500 in 95ms (next.js: 3ms, application-code: 92ms)
+⨯ Error: React Context is unavailable in Server Components
+    at ignore-listed frames {
+  digest: '4016232774'
+}
+Error: Route "/dashboard": Next.js encountered the unstable value `require('node:crypto').randomBytes(size)` while prerendering.
+
+This value can change between renders, so it must be either prerendered or computed later.
+
+Ways to fix this:
+  - [dynamic] Render at request time by adding a dynamic data access (e.g. `await connection()`) before this call
+  - [cache] Prerender and cache the value with `"use cache"`
+  - [client] Render the value on the client with `"use client"`
+
+Learn more: https://nextjs.org/docs/messages/blocking-prerender-random
+    at async Dashboard (src/app/dashboard/page.tsx:31:19)
+    at Dashboard (<anonymous>)
+  29 |
+  30 | export default async function Dashboard() {
+> 31 |   const session = await getServerSession(authOptions as any);
+     |                   ^
+  32 |   if (!session) {
+  33 |     redirect('/login');
+  34 |   }
+[browser] Uncaught Error: React Context is unavailable in Server Components
+✓ Compiled in 374ms
+ GET /dashboard 307 in 159ms (next.js: 22ms, application-code: 137ms)
+Error: Route "/dashboard": Next.js encountered the unstable value `require('node:crypto').randomBytes(size)` while prerendering.
+
+This value can change between renders, so it must be either prerendered or computed later.
+
+Ways to fix this:
+  - [dynamic] Render at request time by adding a dynamic data access (e.g. `await connection()`) before this call
+  - [cache] Prerender and cache the value with `"use cache"`
+  - [client] Render the value on the client with `"use client"`
+
+Learn more: https://nextjs.org/docs/messages/blocking-prerender-random
+    at async Dashboard (src/app/dashboard/page.tsx:31:19)
+    at Dashboard (<anonymous>)
+  29 |
+  30 | export default async function Dashboard() {
+> 31 |   const session = await getServerSession(authOptions as any);
+     |                   ^
+  32 |   if (!session) {
+  33 |     redirect('/login');
+  34 |   }
+ GET /login 200 in 93ms (next.js: 10ms, application-code: 83ms)
+ GET /api/auth/session 200 in 1283ms (next.js: 1200ms, application-code: 83ms)
+ GET /api/auth/session 200 in 25ms (next.js: 14ms, application-code: 11ms)
+ GET /api/auth/providers 200 in 26ms (next.js: 14ms, application-code: 12ms)
+ GET /api/auth/csrf 200 in 11ms (next.js: 1.4ms, application-code: 9ms)
+ POST /api/auth/callback/credentials 200 in 177ms (next.js: 3ms, application-code: 174ms)
+ GET /api/auth/session 200 in 15ms (next.js: 2ms, application-code: 13ms)
+ GET /dashboard 200 in 129ms (next.js: 4ms, application-code: 126ms)
+ GET /dashboard 200 in 68ms (next.js: 2ms, application-code: 66ms)
